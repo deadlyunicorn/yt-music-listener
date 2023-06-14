@@ -220,9 +220,9 @@ chrome.action.onClicked.addListener(
 
               await ChromeExecute(clickOnElement, discordTab, '#account-edit-custom-status')
 
-              await ChromeExecute(clickOnElement, discordTab, 'button[class*="clearButton"]');
-
               await delay(500);
+
+              await ChromeExecute(clickOnElement, discordTab, 'button[class*="clearButton"]');
 
               await ChromeExecute(clickOnElement, discordTab, '[maxlength="128"]');
 
