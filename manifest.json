@@ -20,7 +20,7 @@
     "128":"icons/YT_listener_128.png"
     }
   },
-  "permissions":["scripting","tabs"],
+  "permissions":["scripting"],
   "host_permissions": [
     "https://music.youtube.com/*",
     "https://discord.com/*"
