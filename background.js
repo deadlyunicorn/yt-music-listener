@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.action.onClicked.addListener(
 
-  async (currentTab) => {
+  async () => {
 
     let retries = 0;
 
@@ -109,7 +109,9 @@ chrome.action.onClicked.addListener(
         }
         else if (tabsWithMusic.length > 1) {
           //Can't select tab -- too many tabs with music
-          await ChromeExecute(multipleMusic, currentTab);
+
+          await switchToTab(tabsWithMusic[0])
+          await ChromeExecute(multipleMusic, tabsWithMusic[0]); //with this we don't need permission for activeTab
 
           await chrome.action.setBadgeText({
             text: "OFF"
@@ -208,13 +210,14 @@ chrome.action.onClicked.addListener(
               // in case there is a status box from before...
               if ( [...await executeExperimental(getElement,discordTab,'#account-set-custom-status')][0]["result"] || [...await executeExperimental(getElement,discordTab,'#account-edit-custom-status')][0]["result"]){
                 
-                await ChromeExecute(clickOnElement, discordTab, '[aria-label="User area"] [class*="title"]') //extra click to correct the menu
+                await ChromeExecute(clickOnElement, discordTab, '[class*="title"]') //don't use aria-label selectors, as they are different for different languages..
+
 
               }
 
               await ChromeExecute(clickOnElement, discordTab, 'button[class*="lookFilled"]');
 
-              await ChromeExecute(clickOnElement, discordTab, '[aria-label="User area"] [class*="title"]')
+              await ChromeExecute(clickOnElement, discordTab, '[class*="title"]') //don't use aria-label selectors, as they are different for different languages..
 
               await ChromeExecute(clickOnElement, discordTab, '#account-set-custom-status')
 
@@ -353,9 +356,9 @@ const executeExperimental = async (exe_Function, currentTab,argument) => {
 }
 
 
-const getDiscordUsername = () => {
-  return document.querySelector('[aria-label="User area"] [class*="title"]').textContent;
-}
+// const getDiscordUsername = () => {
+//   return document.querySelector('[aria-label="User area"] [class*="title"]').textContent;
+// }
 
 const alertWindow = (text) => {
   window.alert(text)
