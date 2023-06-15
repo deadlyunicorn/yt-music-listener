@@ -1,7 +1,7 @@
 {
   "manifest_version":3,
   "name":"YTMusic Listener",
-  "description":"Share what you are currently listening to on YTMusic, to your discord friends!",
+  "description":"Share what you are currently listening to on YTMusic, to your discord friends! Made by deadlyunicorn.",
   "version":"1.0.0",
   "icons":{
     "16":"icons/YT_listener_16.png",
@@ -20,7 +20,7 @@
     "128":"icons/YT_listener_128.png"
     }
   },
-  "permissions":["activeTab","scripting","tabs"],
+  "permissions":["scripting","tabs"],
   "host_permissions": [
     "https://music.youtube.com/*",
     "https://discord.com/*"
