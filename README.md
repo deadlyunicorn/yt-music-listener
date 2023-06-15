@@ -27,6 +27,7 @@ I have tested this during development on KDE Plasma on Vivaldi browser.
 
 # How to install
 ( FOR TESTING or to make your own adjustments )
+
 (If you want to simply use the extension you can get it from the Chrome Webstore [LINK TO BE ADDED] )
 
 1. Download the zip.
