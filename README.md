@@ -28,7 +28,7 @@ I have tested this during development on KDE Plasma on Vivaldi browser.
 # How to install
 ( FOR TESTING or to make your own adjustments )
 
-(If you want to simply use the extension you can get it from the Chrome Webstore [LINK TO BE ADDED] )
+(If you want to simply use the extension you can get it from the [Chrome Webstore ](https://chrome.google.com/webstore/detail/ytmusic-listener/oolbocgobnnjceiilnbomnahldmpchof) )
 
 1. Download the zip.
 2. Extract it.
